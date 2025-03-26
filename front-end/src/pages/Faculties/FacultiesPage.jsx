@@ -14,7 +14,7 @@ const FacultyPage = () => {
   const [bgColor, setBgColor] = useState("rgb(255, 255, 255)"); // Default background color
 
   useEffect(() => {
-    fetch(`https://trial-1-db05.onrender.com/api/faculties/${id}`)
+    fetch(`http://localhost:5001/api/faculties/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setFaculty(data);
@@ -203,39 +203,6 @@ const styles = {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     marginRight: "70px",
-  },
-  modalOverlay: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    backgroundColor: "rgba(94, 0, 36, 0.3)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 1000,
-  },
-  modalContent: {
-    backgroundColor: "white",
-    padding: "20px",
-    borderRadius: "15px",
-    width: "400px",
-    maxHeight: "80vh",
-    textAlign: "center",
-    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-    overflow: "hidden",
-    wordWrap: "break-word",
-    whiteSpace: "normal",
-  },
-  closeButton: {
-    backgroundColor: "#bc7c8c",
-    color: "white",
-    border: "none",
-    padding: "10px 20px",
-    borderRadius: "5px",
-    cursor: "pointer",
-    marginTop: "20px",
   },
 };
 

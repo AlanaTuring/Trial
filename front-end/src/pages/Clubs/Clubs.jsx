@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../assets/GreenOval.jpg";
 
+
 const Clubs = () => {
   const [clubs, setClubs] = useState([]);
 
   useEffect(() => {
     const fetchClubs = async () => {
       try {
-        // Adjust the URL if your backend is hosted elsewhere
-        const response = await fetch("https://trial-1-db05.onrender.com/api/clubs");
+        const response = await fetch(`http://localhost:5001/api/clubs`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -30,8 +30,7 @@ const Clubs = () => {
       <div style={styles.grid}>
         {clubs.map((club, index) => (
           <Link
-            key={club._id} // Use the club's _id from MongoDB, fallback to index if needed
-            // If you want to navigate to a club detail page, you can use the club's _id in the URL
+            key={club._id} // Use the club's _id from MongoDB
             to={club.link ? club.link : `/clubs/${club._id}`}
             style={{ textDecoration: "none", position: "relative", zIndex: 2 }}
           >

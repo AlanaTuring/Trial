@@ -4,7 +4,7 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 
 // Import the background image
-import calendarOverlay from '../../assets/calendar_overlay.png';
+import calendarOverlay from "../../assets/calendar_overlay.png";
 
 const ClubPage = () => {
   const { id } = useParams();
@@ -16,7 +16,7 @@ const ClubPage = () => {
   const [bgColor, setBgColor] = useState("rgb(255, 255, 255)"); // Default background color
 
   useEffect(() => {
-    fetch(`https://trial-1-db05.onrender.com//api/clubs/${id}`)
+    fetch(`http://localhost:5001/api/clubs/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setClub(data);
@@ -31,7 +31,7 @@ const ClubPage = () => {
         }
 
         if (data.logo) {
-          extractColor(`/pics/${data.logo}`);
+          extractColor(`${API_BASE_URL}/pics/${data.logo}`);
         }
       })
       .catch((error) => console.error("Error fetching club data:", error));
@@ -97,7 +97,7 @@ const ClubPage = () => {
         <div
           style={{
             ...styles.logo,
-            backgroundImage: `url(/pics/${club.logo})`,
+            backgroundImage: `url(${API_BASE_URL}/pics/${club.logo})`,
           }}
         ></div>
       </div>
@@ -146,13 +146,11 @@ const styles = {
     padding: "20px",
     width: "100%",
     minHeight: "100vh",
-    backgroundSize: "cover", // Keeps the image stretched across the container
-    backgroundPosition: "center center", // Center the image
-    backgroundRepeat: "no-repeat", // Prevent background repetition
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
+    backgroundRepeat: "no-repeat",
     transition: "background-color 0.5s ease",
   },
-  
-  
   headerContainer: {
     display: "flex",
     alignItems: "center",
@@ -180,12 +178,11 @@ const styles = {
   },
   calendarTitle: {
     color: "white",
-    fontSize: "50px", // Increase the font size
+    fontSize: "50px",
     fontWeight: "bold",
-    textAlign: "center", // Center the text
-    margin: "30px 0", // Add spacing
+    textAlign: "center",
+    margin: "30px 0",
   },
-  
   calendarContainer: {
     display: "flex",
     justifyContent: "center",

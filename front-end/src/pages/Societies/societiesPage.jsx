@@ -4,6 +4,7 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import calendarOverlay from "../../assets/calendar_overlay.png";
 
+
 const SocietiesPage = () => {
   const { id } = useParams();
   const [society, setSociety] = useState(null);
@@ -14,7 +15,7 @@ const SocietiesPage = () => {
   const [bgColor, setBgColor] = useState("rgb(255, 255, 255)"); // Default background color
 
   useEffect(() => {
-    fetch(`https://trial-1-db05.onrender.com/api/societies/${id}`)
+    fetch(`http://localhost:5001/api/societies/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setSociety(data);
