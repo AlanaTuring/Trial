@@ -14,7 +14,7 @@ const FacultyPage = () => {
   const [bgColor, setBgColor] = useState("rgb(255, 255, 255)"); // Default background color
 
   useEffect(() => {
-    fetch(`http://localhost:5001/api/faculties/${id}`)
+    fetch(`https://trial-1-db05.onrender.com/api/faculties/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setFaculty(data);

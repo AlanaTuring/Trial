@@ -8,7 +8,7 @@ const Faculties = () => {
   useEffect(() => {
     const fetchFaculties = async () => {
       try {
-        const response = await fetch("http://localhost:5001/api/faculties"); // Replace with your actual API endpoint
+        const response = await fetch("https://trial-1-db05.onrender.com/api/faculties"); // Replace with your actual API endpoint
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

@@ -9,7 +9,7 @@ const Clubs = () => {
     const fetchClubs = async () => {
       try {
         // Adjust the URL if your backend is hosted elsewhere
-        const response = await fetch("http://localhost:5001/api/clubs");
+        const response = await fetch("https://trial-1-db05.onrender.com/api/clubs");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
