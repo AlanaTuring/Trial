@@ -4,7 +4,7 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 
 // Import the background image
-import calendarOverlay from "../../assets/calendar_overlay.png";
+import calendarOverlay from '../../assets/calendar_overlay.png';
 
 const ClubPage = () => {
   const { id } = useParams();
@@ -146,11 +146,13 @@ const styles = {
     padding: "20px",
     width: "100%",
     minHeight: "100vh",
-    backgroundSize: "cover",
-    backgroundPosition: "center center",
-    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover", // Keeps the image stretched across the container
+    backgroundPosition: "center center", // Center the image
+    backgroundRepeat: "no-repeat", // Prevent background repetition
     transition: "background-color 0.5s ease",
   },
+  
+  
   headerContainer: {
     display: "flex",
     alignItems: "center",
@@ -178,11 +180,12 @@ const styles = {
   },
   calendarTitle: {
     color: "white",
-    fontSize: "50px",
+    fontSize: "50px", // Increase the font size
     fontWeight: "bold",
-    textAlign: "center",
-    margin: "30px 0",
+    textAlign: "center", // Center the text
+    margin: "30px 0", // Add spacing
   },
+  
   calendarContainer: {
     display: "flex",
     justifyContent: "center",
