@@ -31,7 +31,7 @@ const ClubPage = () => {
         }
 
         if (data.logo) {
-          extractColor(`${API_BASE_URL}/pics/${data.logo}`);
+          extractColor(`http://localhost:5001/pics/${data.logo}`);
         }
       })
       .catch((error) => console.error("Error fetching club data:", error));
@@ -97,7 +97,7 @@ const ClubPage = () => {
         <div
           style={{
             ...styles.logo,
-            backgroundImage: `url(${API_BASE_URL}/pics/${club.logo})`,
+            backgroundImage: `url(http://localhost:5001/pics/${club.logo})`,
           }}
         ></div>
       </div>
