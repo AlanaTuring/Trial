@@ -6,7 +6,7 @@ const handleRegister = async () => {
     };
   
     try {
-      const response = await fetch("http://localhost:5001/models/Students", {
+      const response = await fetch("http://https://trial-mn48.onrender.com/models/Students", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
