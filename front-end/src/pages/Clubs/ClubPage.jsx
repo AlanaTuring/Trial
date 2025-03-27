@@ -16,7 +16,7 @@ const ClubPage = () => {
   const [bgColor, setBgColor] = useState("rgb(255, 255, 255)"); // Default background color
 
   useEffect(() => {
-    fetch(`http://localhost:5001/api/clubs/${id}`)
+    fetch(`https://trial-mn48.onrender.com/api/clubs/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setClub(data);

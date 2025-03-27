@@ -9,7 +9,7 @@ const Faculties = () => {
   useEffect(() => {
     const fetchFaculties = async () => {
       try {
-        const response = await fetch(`http://localhost:5001/api/faculties`);
+        const response = await fetch(`https://trial-mn48.onrender.com/api/faculties`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

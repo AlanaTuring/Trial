@@ -9,7 +9,7 @@ const Clubs = () => {
   useEffect(() => {
     const fetchClubs = async () => {
       try {
-        const response = await fetch(`http://localhost:5001/api/clubs`);
+        const response = await fetch(`https://trial-mn48.onrender.com/api/clubs`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
