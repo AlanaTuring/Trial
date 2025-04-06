@@ -13,7 +13,28 @@ function App() {
   return (
     <Router>
       <div>
-        <nav style={styles.navbar}>
+        {/* Injecting CSS styles at the end of the DOM */}
+        <style>
+          {`
+            @keyframes slideIn {
+              from {
+                transform: translateX(-100%);
+                opacity: 0;
+              }
+              to {
+                transform: translateX(0);
+                opacity: 1;
+              }
+            }
+
+            .animated-navbar {
+              animation: slideIn 1.5s ease-out forwards;
+              opacity: 0;
+            }
+          `}
+        </style>
+
+        <nav style={styles.navbar} className="animated-navbar">
           <Link to="/" style={styles.navLink}>Home</Link>
           <Link to="/clubs" style={styles.navLink}>Clubs</Link>
           <Link to="/societies" style={styles.navLink}>Societies</Link>
@@ -38,18 +59,23 @@ function App() {
 
 const styles = {
   navbar: {
+    position: "absolute", // Put it on top
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 10, // Stay above the video
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#923152",
+    backgroundColor: "rgba(0, 0, 0, 0.001)", // Transparent background
     padding: "15px 0",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     fontFamily: "Arial, sans-serif",
   },
+  
   navLink: {
     textDecoration: "none",
-    color: "white",
-    fontSize: "18px",
+    color: "#a9a9af",
+    fontSize: "21px",
     fontWeight: "bold",
     padding: "10px 20px",
     margin: "0 15px",

@@ -15,7 +15,7 @@ const SocietiesPage = () => {
   const [bgColor, setBgColor] = useState("rgb(255, 255, 255)"); // Default background color
 
   useEffect(() => {
-    fetch(`https://trial-mn48.onrender.com/api/societies/${id}`)
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/societies/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setSociety(data);
